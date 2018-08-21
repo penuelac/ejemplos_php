@@ -7,7 +7,7 @@
 
 <h1> Alumnos </h1>
 
-<form method="post" action="deleteRow1.php">
+<form method="post" action="deleteRow2.php">
   Ingrese el correo del estudiante:
   <input type="text" name = "mail">
   <br>
