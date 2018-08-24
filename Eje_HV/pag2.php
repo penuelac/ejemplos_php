@@ -1,6 +1,7 @@
 <?php
 
 require('pagina1.class.php');
+require('pagina2.class.php');
 
 
 class ConexionBD
@@ -23,8 +24,7 @@ class ConexionBD
             $miVista->mostrarVista();
         } else {
             copy($_FILES['foto']['tmp_name'], "imagen.png");
-            $nom=$_FILES['foto']['name'];
-            echo "<img src='imagen.png'>";
+            $nom=$_FILES['foto']['name'];            
             $this->insertarSQL($this->conectar(), $_REQUEST['name'], $_REQUEST['tipoDoc'], $_REQUEST['doc'], $_REQUEST['addr'], $_REQUEST['tel'], $_REQUEST['prof']);
             $this->mostrar();
         }
@@ -51,12 +51,13 @@ class ConexionBD
     }
     public function mostrar()
     {
-        echo "Nombre:".$this->pname."<br>";
-        echo "Tipo de Documento:".$this->ptipoDoc."<br>";
-        echo "Número de documento :".$this->pdoc."<br>";
-        echo "Dirección:".$this->paddr."<br>";
-        echo "Telefono:".$this->ptel."<br>";
-        echo "Profesión:".$this->pprof."<br>";
+        $resultado= New Vista2(['name'=>$this->pname,
+                                'prof'=>$this->pprof,
+                                'tipoDoc'=>$this->ptipoDoc,
+                                'doc'=>$this->pdoc,
+                                'addr'=>$this->paddr,
+                                'tel'=>$this->ptel]);
+        $resultado->mostrarVista2();
     }
 }
 

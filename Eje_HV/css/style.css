@@ -1,0 +1,21 @@
+#rotulo
+{
+
+  width: 20%;
+  text-align:left;
+  font-weight:bold;
+  font-style:italic;
+  color: white;
+  background-color: rgb(94,185,255);
+}
+#textos{
+  text-align:center;
+  font-weight:bold;
+  font-size: 200%;
+}
+table{
+  height:100%;
+  weight:100%;
+  border-collapse: separate;
+
+}

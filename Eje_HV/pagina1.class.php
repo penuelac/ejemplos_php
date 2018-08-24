@@ -2,9 +2,6 @@
 <?php
 
 
-/**
- * Mi vista
- */
 class Vista
 {
     public $plantilla;
@@ -75,7 +72,7 @@ class Vista
             </div>';
     }
 
-    private function crearPlantilla()
+    public function crearPlantilla()
     {
         $script = "
                   <script src='js/vendor/jquery.js'></script>
@@ -83,7 +80,7 @@ class Vista
                   <script src='js/vendor/foundation.min.js'></script>";
 
         $this->plantilla = "<!DOCTYPE html>\n";
-        $this->plantilla .= "<html lang='en' dir='ltr'>\n\n";
+        $this->plantilla .= "<html lang='en' dir='ltr'>\n";
         $this->plantilla .= "<head>\n";
         $this->plantilla .= "<meta charset='utf-8'>\n";
         $this->plantilla .= "<link rel='stylesheet' href='css/foundation.css' />";
